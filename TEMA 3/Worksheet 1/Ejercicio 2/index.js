@@ -1,8 +1,10 @@
+//Variables
 var num1=prompt("Introduce el primer número");
 var num2=prompt("Introduce el segundo número");
 var num3=prompt("Introduce el tercer número");
 var num4=prompt("Introduce el cuarto número");
 
+//Función
 function maximo(num1, num2, num3, num4){
     let max=0;
     if(num1>num2 && num1>num3 && num1>num4){
@@ -17,4 +19,5 @@ function maximo(num1, num2, num3, num4){
     return max;
 }
 
+//Saca por consola un mensaje llamando a la función.
 console.log("El mayor de los numero es: "+maximo(num1, num2, num3, num4));

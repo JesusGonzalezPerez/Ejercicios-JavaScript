@@ -1,5 +1,9 @@
+//Script que pide al usuario el nombre de un mes y muestra el número de días que tiene dicho mes.
+
+//Variables
 var mes=prompt("Introduzca un mes");
 
+//Switch
 switch(mes){
     case 'enero':
         document.write("Enero tiene 31 días");

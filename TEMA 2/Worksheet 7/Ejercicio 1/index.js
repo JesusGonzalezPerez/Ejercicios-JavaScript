@@ -11,11 +11,9 @@ function geoFindMe() {
     const longitude = position.coords.longitude;
 
     status.textContent = '';
-    status.textContent = 'Enviando agentes del FBI…';
     
     mapLink.href = `https://www.google.es/maps/@${latitude},${longitude}`;
     mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-    document.write("<img src=poli.jpg>");
   }
 
   function error() {

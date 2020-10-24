@@ -1,5 +1,9 @@
+//Script que pregunta edad y muestra en que etapa educativa corresponde.
+
+//Variables
 var edad=parseInt(prompt("Introduzca su edad"));
 
+//Condicional
 if(edad<=5)
     document.write("Deberia de estar en jardin de infancia");
     if(edad>5 && edad<=11)

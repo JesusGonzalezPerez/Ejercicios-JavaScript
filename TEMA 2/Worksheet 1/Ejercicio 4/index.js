@@ -1,13 +1,17 @@
-// Write a function called combineTwoArrays that takes in two arrays as arguments, and returns a single array that combines both 
-// (using the spread operator).
+//Contador de 60s hacia atrás y que al llegar a 0 carga la página principal de google
 
-var arrayCombinado;
+//Variable
+var cont = 5;
 
-function combineTwoArrays(array1,array2){
-    arrayCombinado=[...array1,...array2];
-    return arrayCombinado;
+//función
+function imprime() {
+    console.log(cont);
+    cont--;
+    if (cont > 0)
+        setTimeout(imprime, 1000);
+    if (cont == 0)
+        location.href = "http://www.google.com";
 }
 
-var array1 =[1,2,3,4,'dog'];
-var array2=[4,5,6,'cat'];
-console.log("Array combinado: "+combineTwoArrays(array1,array2));
+//Llamada a la función
+setTimeout(imprime, 1000);

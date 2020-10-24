@@ -1,7 +1,12 @@
+//Imagen con el enunciado del ejercicio
+document.write("<img src=4.19.png width=50%><br><hr>");
+
+//Variables
 var numColums=8;
 var numFilas=8;
 var anchura=altura=50;
 
+//Tabla
 document.write("<table border=”0” cellspacing=”2” bgcolor=”white”>");
 
 for(let j=1;j<=numColums;j++){

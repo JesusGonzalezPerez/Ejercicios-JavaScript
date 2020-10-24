@@ -1,7 +1,11 @@
-año=new Date().getFullYear();
+//Crear un objeto date y obtiene a partir del objeto la información
+
+date= new Date();
+
+año=date.getFullYear();
 document.write("1. Year: "+año+"<br>");
 
-var mes=new Date().getMonth();
+var mes=date.getMonth();
 switch(mes){
     case 0:
         mes="enero";
@@ -42,17 +46,17 @@ switch(mes){
 }
 document.write("2. Month: "+mes+"<br>");
 
-dia=new Date().getDate();
+dia=date.getDate();
 document.write("3. Day: "+dia+"<br>");
 
-hora=new Date().getHours()   ;
+hora=date.getHours()   ;
 document.write("4. Hour: "+hora+"<br>");
 
-minutos=new Date().getUTCMinutes();
+minutos=date.getUTCMinutes();
 document.write("5. Minutes: "+minutos+"<br>");
 
-segundos=new Date().getUTCSeconds();
+segundos=date.getUTCSeconds();
 document.write("6. Seconds: "+segundos+"<br>");
 
-fecha=new Date();
+fecha=date;
 document.write("Fecha: "+fecha+"<br>");

@@ -1,3 +1,6 @@
+//Crear un reloj con horas, minutos y segundos
+
+//Función
 function reloj() {
     var reloj = document.getElementById("reloj");
     var fechaHora = new Date();
@@ -19,6 +22,7 @@ function reloj() {
 
 }
 
+//Llamada a la funcion
 window.onload = function() {
         setInterval(reloj, 1000);
 }

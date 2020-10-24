@@ -1,5 +1,7 @@
+//Variables
 var num=parseInt(prompt("Introduce un número para calcular su factorial"));
 
+//Función
 function factorial(n){   
     let total = 1; 
 	for (let i=1;i<=n;i++){
@@ -8,8 +10,10 @@ function factorial(n){
 	return total; 
 }
 
+//Llamada a la función
 document.write("Factorial de "+num+" → "+factorial(num)+"<br>");
 
+//Tabla
 document.write("<br><table border=1>");
     for(let i=1;i<=10;i++){
         document.write("<tr>");
