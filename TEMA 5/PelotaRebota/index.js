@@ -27,23 +27,52 @@ class Bola {
         document.getElementsByTagName('svg')[0].appendChild(this.circulo);
     }
 
-    //Función que da movimiento a las bolas
+    // //Función que da movimiento a las bolas
+    // mueve() {
+
+    //     this.x = this.x + this.velX;
+    //     this.circulo.setAttribute("cx", this.x);
+
+    //     this.y += this.velY;
+    //     this.circulo.setAttribute("cy", this.y);
+
+    //     //Detectar colisión con el svg
+    //     if (this.x >= document.getElementById("svg").getBoundingClientRect().width - this.r || this.x <= this.r) {
+    //         this.velX *= -1;
+    //     }
+    //     if (this.y >= document.getElementById("svg").getBoundingClientRect().height - this.r || this.y <= this.r) {
+    //         this.velY *= -1;
+    //     }
+    // }
     mueve() {
 
-        this.x = this.x + this.velX;
-        this.circulo.setAttribute("cx", this.x);
-
+        this.x = this.x + this.velX;    
         this.y += this.velY;
-        this.circulo.setAttribute("cy", this.y);
+       
 
         //Detectar colisión con el svg
         if (this.x >= document.getElementById("svg").getBoundingClientRect().width - this.r || this.x <= this.r) {
             this.velX *= -1;
+            if (this.x <= this.r)
+                this.x = this.r;
+            else
+                this.x = document.getElementById("svg").getBoundingClientRect().width - this.r;
+
         }
         if (this.y >= document.getElementById("svg").getBoundingClientRect().height - this.r || this.y <= this.r) {
             this.velY *= -1;
+            if (this.y <= this.r)
+                 this.y = this.r;
+             else
+                 this.y = document.getElementById("svg").getBoundingClientRect().height - this.r;
+
         }
+
+        this.circulo.setAttribute("cy", this.y);
+        this.circulo.setAttribute("cx", this.x);
+
     }
+
 }
 
 //Función onload
@@ -69,8 +98,8 @@ function animaTodasBolas() {
 //Funcion que crea las bolas
 function crearBolas() {
     bolas = [];
-    for (let i = 1; i < 8; i++) {
-        bolas.push(new Bola(35, "url(#pattern" + i + ")", 50 * (i + 1) * 2, 40 * i + 40, 1, 3, i, "black"));
+    for (let i = 1; i <= 7; i++) {
+        bolas.push(new Bola(35, "url(#pattern" + i + ")", 50 * (i + 1) * 2, 40 * i + 40, 2, 2, i, "black"));
     }
 }
 
@@ -90,10 +119,10 @@ function colisionan(a, b) {
     var distance = Math.sqrt(dx * dx + dy * dy);
 
     if (distance < a.r + b.r) {
-        a.x -= 2 * a.velX;
-        a.y -= 2 * a.velY;
-        b.x -= 2 * b.velX;
-        b.y -= 2 * b.velY;
+        a.x -= a.velX;
+        a.y -= a.velY;
+        b.x -= b.velX;
+        b.y -= b.velY;
 
         a.velX *= -1;
         a.velY *= -1;
